@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+* {
+  font-family: satoshi;
+}
+
+@theme {
+  --color-brand-main: rgba(11, 61, 145, 1);
+  --color-header-bg: rgba(244, 246, 251, 1);
+  --color-brand-950: rgba(3, 35, 89, 1);
+  --color-white-25: rgba(244, 246, 251, 1);
+  --color-white-gray: rgba(225, 225, 225, 1);
+  --color-form-gray: rgba(240, 240, 240, 1);
+  --color-bg-form-gray: rgba(110, 110, 110, 0.26);
+  --color-bar: rgba(202, 202, 202, 1);
+  --color-yellow-header: rgba(249, 191, 6, 1);
+  --color-white-accent: rgba(252, 250, 243, 1);
+  --color-gray-text: rgba(46, 46, 46, 1);
+  --color-white-variant: rgba(255, 255, 255, 1);
+}
