@@ -34,7 +34,7 @@ function CommercialDevelopmentSurveySection() {
         </aside>
 
         {/* Side Content */}
-        <div className="flex flex-col gap-6 sm:gap-8 w-full lg:w-1/2 xl:w-[45%]">
+        <div className="flex flex-col gap-6 sm:gap-8 w-full lg:w-1/2 xl:w-[45%] ">
           {mappedImages.map((item, index) => (
             <aside
               key={index}
