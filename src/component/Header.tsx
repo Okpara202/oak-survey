@@ -10,12 +10,12 @@ function Header() {
           <ul className="sm:flex hidden justify-between items-center gap-10 lg:text-[18px] text-[10px]">
             <li>
               <NavLink
-                className={(isActive) =>
+                className={({ isActive }) =>
                   isActive
                     ? "font-medium border-b-2 pb-3.5 border-b-brand-main"
                     : "font-medium"
                 }
-                to="/"
+                to="."
                 end
               >
                 Home
@@ -23,36 +23,36 @@ function Header() {
             </li>
             <li>
               <NavLink
-                className={(isActive) =>
+                className={({ isActive }) =>
                   isActive
                     ? "font-medium border-b-2 pb-3.5 border-b-brand-main"
                     : "font-medium"
                 }
-                to="#"
+                to="About"
               >
                 About us
               </NavLink>
             </li>
             <li>
               <NavLink
-                className={(isActive) =>
+                className={({ isActive }) =>
                   isActive
-                    ? "font-medium border-b-2 pb-3.5 border-b-brand-main flex gap-2 mt-5 lg:mt-4 items-center"
-                    : "font-medium flex gap-2 mt-4 items-center"
+                    ? "font-medium border-b-2 pb-3.5 border-b-brand-main flex gap-2  lg:mt-4 items-center"
+                    : "font-medium flex gap-2  items-center"
                 }
-                to="#"
+                to="Services"
               >
                 Our Services <img src="/arrow-down.svg" />
               </NavLink>
             </li>
             <li>
               <NavLink
-                className={(isActive) =>
+                className={({ isActive }) =>
                   isActive
                     ? "font-medium border-b-2 pb-3.5 border-b-brand-main"
                     : "font-medium"
                 }
-                to="#"
+                to="Contact"
               >
                 Contact us
               </NavLink>
