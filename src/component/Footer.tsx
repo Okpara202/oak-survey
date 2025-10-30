@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="min-h-[730px] mx-auto bg-brand-950 flex items-center">
+    <footer className="mt-30 min-h-[730px] mx-auto bg-brand-950 flex items-center">
       <section className="mx-auto lg:w-[80%] w-[80%] md:w-full md:px-10 lg:px-0 flex md:flex-row flex-col justify-between font-medium py-14 md:py-0">
         <aside className="lg:w-[400px] md:w-[350px] w-full">
           {/* Form */}
