@@ -58,7 +58,7 @@ function Footer() {
               <ul className="flex flex-col gap-4 mt-8">
                 <li>
                   <Link
-                    to="#"
+                    to="about"
                     className="md:text-[1.125rem]/27.67px text-[0.75rem]/27.67px font-normal  text-white-gray"
                   >
                     About Us
@@ -67,7 +67,7 @@ function Footer() {
                 <li>
                   <Link
                     className="md:text-[1.125rem]/27.67px text-[0.75rem]/27.67px font-normal  text-white-gray"
-                    to="#"
+                    to="trustedPartners"
                   >
                     Trusted Partners
                   </Link>
@@ -75,7 +75,7 @@ function Footer() {
                 <li>
                   <Link
                     className="md:text-[1.125rem]/27.67px text-[0.75rem]/27.67px font-normal  text-white-gray"
-                    to="#"
+                    to="services"
                   >
                     Our Services
                   </Link>
@@ -83,7 +83,7 @@ function Footer() {
                 <li>
                   <Link
                     className="md:text-[1.125rem]/27.67px text-[0.75rem]/27.67px font-normal  text-white-gray"
-                    to="#"
+                    to="contact"
                   >
                     Contact Us
                   </Link>
