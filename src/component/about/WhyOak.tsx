@@ -28,7 +28,7 @@ function WhyOak() {
         <div className="flex flex-col lg:flex-row justify-between gap-6 sm:gap-8 mt-8 sm:mt-10 lg:mt-12 text-gray-text">
           {cards.map((card, index) => (
             <aside
-              className="shadow-md rounded-[20px] w-[70%] mx-auto lg:basis-[30%] p-5 sm:p-6 lg:p-4 flex gap-3 sm:gap-4 lg:gap-2 items-start"
+              className="shadow-md rounded-[20px] w-[90%] mx-auto lg:basis-[30%] p-5 sm:p-6 lg:p-4 flex gap-3 sm:gap-4 lg:gap-2 items-start"
               key={index}
             >
               <img
