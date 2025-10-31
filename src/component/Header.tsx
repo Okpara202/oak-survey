@@ -4,6 +4,28 @@ import { useState, useEffect } from "react";
 
 function Header() {
   const [showMenu, setShowMenu] = useState<boolean>(false);
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const services = [
+    {
+      name: "Land Registry Complaint Map",
+      path: "land-registry",
+    },
+    { name: "Topographical Surveying", path: "topographical-surveying" },
+    { name: "Measured Building Survey", path: "building-survey" },
+    { name: "3D Scanning", path: "3d-scanning" },
+    { name: "Volume Surveying", path: "volume-surveying" },
+    { name: "Boundary Disputes", path: "boundary-disputes" },
+    { name: "Forestry Services", path: "forestry-services" },
+    { name: "Setting Out", path: "setting-out" },
+    { name: "Drone Mapping", path: "drone-mapping" },
+    {
+      name: "Irish Water compliance Documentation",
+      path: "irish-water",
+    },
+    { name: "As built surveys", path: "as-built-surveys" },
+    { name: "Site surveys", path: "site-surveys" },
+  ];
 
   const handleToggleMenu = () => {
     setShowMenu((prevState) => !prevState);
@@ -51,7 +73,7 @@ function Header() {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "font-medium border-b-2 pb-3.5 border-b-brand-main"
+                    ? "font-medium border-b-2 pb-3.5 border-b-brand-main text-brand-main"
                     : "font-medium hover:text-brand-main transition-colors"
                 }
                 to="."
@@ -64,7 +86,7 @@ function Header() {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "font-medium border-b-2 pb-3.5 border-b-brand-main"
+                    ? "font-medium border-b-2 pb-3.5 border-b-brand-main text-brand-main"
                     : "font-medium hover:text-brand-main transition-colors"
                 }
                 to="About"
@@ -74,26 +96,51 @@ function Header() {
             </li>
             <li>
               <NavLink
+                to="services"
                 className={({ isActive }) =>
-                  isActive
-                    ? "font-medium border-b-2 pb-3.5 border-b-brand-main flex gap-2 items-center"
-                    : "font-medium flex gap-2 items-center hover:text-brand-main transition-colors"
+                  `relative flex items-center gap-1 ${
+                    isActive
+                      ? " font-medium border-b-2 pb-2.5 border-b-brand-main text-brand-main"
+                      : "font-medium"
+                  }`
                 }
-                to="Services"
               >
                 Our Services
                 <img
                   src="/arrow-down.svg"
-                  alt=""
-                  className="w-3 h-3 lg:w-4 lg:h-4"
+                  alt="dropdown arrow"
+                  onClick={() => setShowDropdown(!showDropdown)}
+                  className={`cursor-pointer transition-transform duration-200 ${
+                    showDropdown ? "rotate-180" : ""
+                  }`}
                 />
               </NavLink>
+              {showDropdown && (
+                <div
+                  className="absolute mt-6 text-[#2E2E2E] bg-[#F4F6FB] shadow-lg border border-[#E3E3E3] w-[380px] sm:w-[480px] p-6 z-50"
+                  onMouseLeave={() => setShowDropdown(false)}
+                >
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6 text-[14px] lg:text-[14.5px] text-gray-800 font-medium">
+                    {services.map((service, index) => (
+                      <NavLink
+                        key={index}
+                        to={`/services/${service.path}`}
+                        onClick={() => setShowDropdown(false)}
+                        className="border-b border-gray-200 pb-2 hover:text-brand-main transition-colors duration-200 block"
+                      >
+                        {service.name}
+                      </NavLink>
+                    ))}
+                  </div>
+                </div>
+              )}
             </li>
+
             <li>
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "font-medium border-b-2 pb-3.5 border-b-brand-main"
+                    ? "font-medium border-b-2 pb-3.5 border-b-brand-main text-brand-main"
                     : "font-medium hover:text-brand-main transition-colors"
                 }
                 to="Contact"
