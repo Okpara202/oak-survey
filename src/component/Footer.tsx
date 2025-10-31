@@ -93,7 +93,7 @@ function Footer() {
           </aside>
 
           <aside>
-            {/* Contact */}
+            {/* Contact section */}
             <h1 className="font-bold text-[1.11125rem] mb-2.5 text-white-25 mt-12 ">
               CONTACT
               <ul className="flex flex-col gap-4 mt-8 text-white-gray">
