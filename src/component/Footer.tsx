@@ -52,7 +52,7 @@ function Footer() {
 
         <div className="flex justify-between md:w-[50%] w-full mt-32 md:mt-0">
           <aside>
-            {/* Link */}
+            {/* Links */}
             <h1 className="font-bold text-[1.11125rem] text-white-25 mt-12">
               LINKS
               <ul className="flex flex-col gap-4 mt-8">
