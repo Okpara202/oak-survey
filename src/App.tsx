@@ -23,14 +23,17 @@ import DroneMapping from "./page/ServicePages/DroneMapping";
 import IrishWater from "./page/ServicePages/IrishWater";
 import AsBuiltSurveys from "./page/ServicePages/AsBuiltSurveys";
 import SiteSurveys from "./page/ServicePages/SiteSurveys";
+import Trusted from "./page/Trusted";
+import Contact from "./page/Contact";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
-     
       <Route path="services" element={<Services />} />
+      <Route path="contact" element={<Contact />} />
+      <Route path="trustedPartners" element={<Trusted />} />
 
       {/* Individual Service Pages */}
       <Route path="services/land-registry" element={<LandRegistry />} />
