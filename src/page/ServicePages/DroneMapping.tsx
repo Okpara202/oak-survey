@@ -1,5 +1,11 @@
+import ServiceHero from "../../component/Services/ServiceHero";
+
 const DroneMapping = () => {
-  return <div>DroneMapping</div>;
+  return (
+    <div>
+      <ServiceHero title="DRONE MAPPING" />
+    </div>
+  );
 };
 
 export default DroneMapping;

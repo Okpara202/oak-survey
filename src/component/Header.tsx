@@ -94,6 +94,7 @@ function Header() {
                 About us
               </NavLink>
             </li>
+
             <li>
               <NavLink
                 to="services"
@@ -117,10 +118,10 @@ function Header() {
               </NavLink>
               {showDropdown && (
                 <div
-                  className="absolute mt-6 text-[#2E2E2E] bg-[#F4F6FB] shadow-lg border border-[#E3E3E3] w-[380px] sm:w-[480px] p-6 z-50"
+                  className="absolute mt-6 text-[#2E2E2E] bg-[#F4F6FB] shadow-lg border border-[#E3E3E3] p-6 md:h-[37vh] overflow-y-auto"
                   onMouseLeave={() => setShowDropdown(false)}
                 >
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6 text-[14px] lg:text-[14.5px] text-gray-800 font-medium">
+                  <div className="grid lg:grid-cols-2 gap-y-3 gap-x-6 text-[14px] lg:text-[14.5px] text-gray-800 font-medium md:grid-cols-1  ">
                     {services.map((service, index) => (
                       <NavLink
                         key={index}
@@ -199,16 +200,50 @@ function Header() {
                     About Us
                   </Link>
                 </li>
-                <li className="border-b border-b-neutral">
-                  <Link
-                    className="flex gap-2 items-center px-[5%] py-5 hover:bg-gray-50 transition-colors"
-                    to="Services"
-                    onClick={closeMenu}
-                  >
-                    Our Services
-                    <img src="/arrow-down.svg" alt="" className="w-3 h-3" />
-                  </Link>
+
+                <li className="border-b border-b-neutral relative ">
+                  <div className="flex">
+                    <Link
+                      to="services"
+                      className="flex gap-2 items-center px-[5%] py-5 hover:bg-gray-50 transition-colors"
+                      onClick={closeMenu}
+                    >
+                      Our Services
+                    </Link>
+                    <img
+                      src="/arrow-down.svg"
+                      alt="dropdown arrow"
+                      onClick={() => setShowDropdown(!showDropdown)}
+                      className={`cursor-pointer transition-transform duration-200 ${
+                        showDropdown ? "rotate-180" : ""
+                      }`}
+                    />
+                  </div>
+
+                  {showDropdown && (
+                    <div
+                      className="absolute mt-0 md:mt-5 text-[#2E2E2E] bg-[#F4F6FB] shadow-lg border border-[#E3E3E3]  p-4 z-50 max-md:w-[230px] h-[35vh] overflow-y-auto"
+                      onMouseLeave={() => setShowDropdown(false)}
+                    >
+                      <div className="grid grid-cols-2 gap-y-3 gap-x-4 text-[13px] lg:text-[14.5px] text-gray-800 font-medium max-md:grid-cols-1 ">
+                        {services.map((service, index) => (
+                          <Link
+                            key={index}
+                            to={`/services/${service.path}`}
+                            onClick={() => {
+                              setShowDropdown(false);
+                              closeMenu();
+                            }}
+                            className="border-b border-gray-200 pb-2 hover:text-brand-main transition-colors duration-200 block"
+                          >
+                            {service.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </li>
+
                 <li className="border-b border-b-neutral">
                   <Link
                     className="block px-[5%] py-5 hover:bg-gray-50 transition-colors"

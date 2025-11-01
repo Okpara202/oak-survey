@@ -8,7 +8,6 @@ import {
 import Layout from "./component/Layout";
 import Home from "./page/Home";
 import About from "./page/About";
-import Contact from "./page/Contact";
 import Services from "./page/Services";
 
 // Individual service pages
@@ -30,7 +29,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
-      <Route path="contact" element={<Contact />} />
+     
       <Route path="services" element={<Services />} />
 
       {/* Individual Service Pages */}

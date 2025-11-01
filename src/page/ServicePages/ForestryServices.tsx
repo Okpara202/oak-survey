@@ -1,5 +1,11 @@
+import ServiceHero from "../../component/Services/ServiceHero";
+
 const ForestryServices = () => {
-  return <div>ForestryServices</div>;
+  return (
+    <div>
+      <ServiceHero title="FORESTRY SERVICES" />
+    </div>
+  );
 };
 
 export default ForestryServices;
