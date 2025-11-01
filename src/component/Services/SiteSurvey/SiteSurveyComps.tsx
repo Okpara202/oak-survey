@@ -1,3 +1,4 @@
+import GetInTouch from "../GetInTouch";
 import OurServicesIntro from "../OurServicesIntro";
 import ServiceParagraph from "../ServiceParagraph";
 import ServicesImg from "../ServicesImg";
@@ -60,15 +61,19 @@ function SiteSurveyComps() {
       />
 
       <ServicesTitle text="Why Choose Oak surveys" />
-      <div className="leading-relaxed sm:leading-8 lg:leading-normal font-medium text-[0.75rem] sm:text-[1rem] lg:text-[1.125rem] mt-5">
-        <p>
-          For professional, data-verified volume surveying services, contact Oak
-          Surveys today.
-        </p>
-        <p>📞 Call: +353(0)874950977 </p>
-        <p>📧 Email: info@oaksurveys.ie</p>
-      </div>
-      <ServiceParagraph text="Our team will provide a tailored quote and timeline that matches your project's needs." />
+      <ServiceParagraph text="At Oak Surveys, we combine technical expertise with local experience to deliver dependable results. Our team upholds the highest standards of professionalism, precision, and client satisfaction." />
+      <ServiceParagraph text="We prioritize: " />
+      <ServicesList
+        services={[
+          "Accuracy and attention to detail",
+          "Transparent communication",
+          "On-time project delivery",
+          "Compliance with Irish survey regulations",
+        ]}
+      />
+      <ServiceParagraph text="Whether it’s a small residential plot or a large commercial site, we ensure your project starts with the right information." />
+
+      <GetInTouch />
     </div>
   );
 }
