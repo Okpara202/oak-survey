@@ -1,5 +1,11 @@
+import ServiceHero from "../../component/Services/ServiceHero";
+
 const LandRegistry = () => {
-  return <div>LandRegistry</div>;
+  return (
+    <div>
+      <ServiceHero title="LAND REGISTRY SERVICES" />
+    </div>
+  );
 };
 
 export default LandRegistry;

@@ -1,5 +1,11 @@
+import ServiceHero from "../../component/Services/ServiceHero";
+
 const AsBuiltSurveys = () => {
-  return <div>AsBuiltSurveys</div>;
+  return (
+    <div>
+      <ServiceHero title="AS BUILT SURVEYS" />
+    </div>
+  );
 };
 
 export default AsBuiltSurveys;

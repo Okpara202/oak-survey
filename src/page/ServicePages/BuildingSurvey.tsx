@@ -1,5 +1,11 @@
+import ServiceHero from "../../component/Services/ServiceHero";
+
 const BuildingSurvey = () => {
-  return <div>BuildingSurvey</div>;
+  return (
+    <div>
+      <ServiceHero title="MEASURED BUILDING SURVEY" />
+    </div>
+  );
 };
 
 export default BuildingSurvey;

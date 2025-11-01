@@ -1,5 +1,11 @@
+import ServiceHero from "../../component/Services/ServiceHero";
+
 const SettingOut = () => {
-  return <div>SettingOut</div>;
+  return (
+    <div>
+      <ServiceHero title="SETTING OUT" />
+    </div>
+  );
 };
 
 export default SettingOut;

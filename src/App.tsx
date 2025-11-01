@@ -8,7 +8,6 @@ import {
 import Layout from "./component/Layout";
 import Home from "./page/Home";
 import About from "./page/About";
-import Contact from "./page/Contact";
 import Services from "./page/Services";
 
 // Individual service pages
@@ -25,14 +24,15 @@ import IrishWater from "./page/ServicePages/IrishWater";
 import AsBuiltSurveys from "./page/ServicePages/AsBuiltSurveys";
 import SiteSurveys from "./page/ServicePages/SiteSurveys";
 import Trusted from "./page/Trusted";
+import Contact from "./page/Contact";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
-      <Route path="contact" element={<Contact />} />
       <Route path="services" element={<Services />} />
+      <Route path="contact" element={<Contact />} />
       <Route path="trustedPartners" element={<Trusted />} />
 
       {/* Individual Service Pages */}
