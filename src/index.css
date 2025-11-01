@@ -31,4 +31,6 @@
   --color-light-gray: rgba(247, 247, 247, 1);
   --color-yellow-border: rgba(214, 163, 0, 1);
   --color-neutral: rgba(227, 227, 227, 1);
+  --color-anotherGray: rgba(247, 247, 248, 1);
+  --color-black-text: rgba(0, 0, 0, 1);
 }

@@ -1,11 +1,13 @@
 interface ServiceHeroProps {
   title: string;
   backgroundImage?: string;
+  placeDiv?: boolean;
 }
 
 const ServiceHero = ({
   title,
   backgroundImage = "/Servicebg.jpg",
+  placeDiv = false,
 }: ServiceHeroProps) => {
   return (
     <div
@@ -20,7 +22,9 @@ const ServiceHero = ({
         </p>
       </div>
 
-      <div className=" absolute lg:w-[80%] w-[90%] lg:left-[10%] left-[5%] -bottom-px py-4 md:py-6 bg-white "></div>
+      {placeDiv && (
+        <div className=" absolute lg:w-[80%] w-[90%] lg:left-[10%] left-[5%] -bottom-px py-4 md:py-6 bg-white "></div>
+      )}
     </div>
   );
 };

@@ -1,14 +1,14 @@
 import BuildingConfident from "../component/Services/BuildingConfident";
-import  ServiceCard from "../component/Services/ServiceCard";
+import ServiceCard from "../component/Services/ServiceCard";
 import ServiceHero from "../component/Services/ServiceHero";
 
 const Services = () => {
   return (
-    <div>
-      <ServiceHero title="OUR SERVICES" />
+    <>
+      <ServiceHero title="OUR SERVICES" placeDiv={true} />
       <BuildingConfident />
-      <ServiceCard/>
-    </div>
+      <ServiceCard />
+    </>
   );
 };
 

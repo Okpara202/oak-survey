@@ -1,10 +1,12 @@
 import ServiceHero from "../../component/Services/ServiceHero";
+import SiteSurveyComps from "../../component/Services/SiteSurvey/SiteSurveyComps";
 
 const SiteSurveys = () => {
   return (
-    <div>
+    <>
       <ServiceHero title="SITE SURVEYS" />
-    </div>
+      <SiteSurveyComps />
+    </>
   );
 };
 
