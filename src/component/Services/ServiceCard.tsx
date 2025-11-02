@@ -1,11 +1,12 @@
-import {Link} from "react-router-dom"
+import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 interface Service {
   id: number;
   title: string;
   description: string;
-  icon: string; 
-  link: string
+  icon: string;
+  link: string;
 }
 
 const services: Service[] = [
@@ -16,7 +17,6 @@ const services: Service[] = [
       "Official, registry-compliant maps that clearly define boundaries for legal registration.",
     icon: "./Landing.svg",
     link: "/services/land-registry",
-    
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ const services: Service[] = [
     description:
       "Detailed 2D and 3D building data for renovations, extensions, or architectural documentation.",
     icon: "./Building.svg",
-   link: "/services/building-survey",
+    link: "/services/building-survey",
   },
   {
     id: 4,
@@ -40,7 +40,7 @@ const services: Service[] = [
     description:
       "High-precision 3D scans and digital models that support accurate planning, design, and documentation.",
     icon: "./3D.svg",
-   link: "/services/3d-scanning",
+    link: "/services/3d-scanning",
   },
   {
     id: 5,
@@ -48,8 +48,7 @@ const services: Service[] = [
     description:
       "Precise volume measurements for earthworks, excavations, and stockpile management.",
     icon: "./Topographical.svg",
-   link: "/services/volume-surveying",
-
+    link: "/services/volume-surveying",
   },
   {
     id: 6,
@@ -57,15 +56,15 @@ const services: Service[] = [
     description:
       "Professional surveys to establish clear boundaries and resolve land ownership conflicts.",
     icon: "./Boundary.svg",
-   link: "/services/boundary-disputes",
+    link: "/services/boundary-disputes",
   },
-   {
+  {
     id: 7,
     title: "Forestry Services",
     description:
-      "safe, cost-effective forest road design from initial survey to final documentation.",
+      "Safe, cost-effective forest road design from initial survey to final documentation.",
     icon: "./Forestry.svg",
-   link: "/services/forestry-services",
+    link: "/services/forestry-services",
   },
   {
     id: 8,
@@ -73,7 +72,7 @@ const services: Service[] = [
     description:
       "Accurate on-site markings that translate your design into reality during construction.",
     icon: "./Setting.svg",
-   link: "/services/setting-out",
+    link: "/services/setting-out",
   },
   {
     id: 9,
@@ -81,60 +80,126 @@ const services: Service[] = [
     description:
       "We use drones to capture precise aerial data for fast, accurate mapping and analysis.",
     icon: "./Drone.svg",
-   link: "/services/drone-mapping",
+    link: "/services/drone-mapping",
   },
   {
     id: 10,
-    title: "Irish Water compliance Documentation",
+    title: "Irish Water Compliance Documentation",
     description:
-      "We handle all documentation to ensure your project meets Irish Water’s technical standards and approval requirements.",
+      "We handle all documentation to ensure your project meets Irish Water's technical standards and approval requirements.",
     icon: "./Water.svg",
-   link: "/services/irish-water",
+    link: "/services/irish-water",
   },
-   {
+  {
     id: 11,
-    title: "As built surveys",
+    title: "As Built Surveys",
     description:
       "We record the exact details of completed works, providing accurate data that reflects what was built on site.",
     icon: "./Setting.svg",
-   link: "/services/as-built-surveys",
+    link: "/services/as-built-surveys",
   },
   {
     id: 12,
-    title: "Site surveys",
+    title: "Site Surveys",
     description:
       "We capture precise ground and boundary data to support planning, design, and construction activities.",
     icon: "./Topographical.svg",
-   link: "/services/site-surveys",
+    link: "/services/site-surveys",
   },
 ];
 
 const ServiceCard = () => {
+  const searchRef = useRef<null | HTMLInputElement>(null);
+  const [searchValue, setSearchValue] = useState<string>("");
+
+  // Focus on search when icon is clicked
+  const searchFocus = () => {
+    searchRef?.current?.focus();
+  };
+
+  // Filter services - case insensitive partial match
+  const filteredService = services.filter((service) =>
+    service.title.toLowerCase().includes(searchValue.toLowerCase().trim())
+  );
+
   return (
-    <section className="w-full py-8 flex justify-center">
-      <div className=" max-w-[1440px] w-[90%] lg:w-[80%] grid grid-cols-2 justify-center gap-3 lg:gap-6  md:grid-cols-3 ">
-        {services.map((service) => (
-          <div
-            key={service.id}
-            className="flex flex-col items-center justify-between bg-[#F7F7F7] shadow-md  rounded-2xl  lg:px-8 text-center py-14 "
-          >
-            <img
-              src={service.icon}
-              alt={service.title}
-              className="w-12 h-12 mb-5 object-contain"
-            />
-            <h3 className="text-[12px] md:text-[20px] lg:text-[24px] font-semibold mb-5 lg:mb-7 ">{service.title}</h3>
-            <p className="text-[10px] md:text-[16px] lg:text-[18px] text-[#2E2E2E] mb-5 lg:mb-10 w-[80%] lg:w-[70%]">{service.description}</p>
-             <button
-              onClick={(e) => e.stopPropagation()} 
-              className="bg-[#0B3D91] text-white w-[40%]  py-2 rounded-md text-[8.5px] md:text-[14px] hover:bg-blue-800 transition-colors mb-5  hover:scale-105 hover:shadow-lg lg:py-3"
+    <>
+      <div className="w-[90%] sm:w-[85%] lg:w-[80%] py-6 sm:py-8 mx-auto flex justify-end px-4 sm:px-0">
+        <div className="bg-anotherGray w-full sm:w-[280px] lg:w-[300px] flex gap-3 sm:gap-4 rounded-lg p-3 sm:p-4 items-center">
+          {/* Search icon */}
+          <img
+            onClick={searchFocus}
+            src="/search icon.svg"
+            alt="Search icon"
+            className="w-5 h-5 cursor-pointer shrink-0"
+          />
+          {/* Searchbar */}
+          <input
+            ref={searchRef}
+            placeholder="Search services..."
+            type="text"
+            value={searchValue}
+            className="w-full border-none outline-none bg-transparent text-sm sm:text-base placeholder:text-gray-400"
+            onChange={(e) => setSearchValue(e.target.value)}
+          />
+          {searchValue && (
+            <button
+              onClick={() => setSearchValue("")}
+              className="text-gray-500 hover:text-gray-700 text-xl shrink-0"
+              aria-label="Clear search"
             >
-              <Link to={service.link}>More</Link>
+              ×
             </button>
-          </div>
-        ))}
+          )}
+        </div>
       </div>
-    </section>
+
+      <section className="w-full py-6 sm:py-8 flex justify-center items-center mb-10 sm:mb-14">
+        {/* Cards */}
+        <div className="max-w-[1440px] w-[90%] sm:w-[85%] lg:w-[80%] px-4 sm:px-0">
+          {filteredService.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
+              {filteredService.map((service) => (
+                <div
+                  key={service.id}
+                  className="flex flex-col items-center justify-between bg-light-gray shadow-md hover:shadow-xl rounded-2xl px-6 sm:px-7 lg:px-8 text-center py-10 sm:py-12 lg:py-14 transition-all duration-300 hover:scale-105"
+                >
+                  <img
+                    src={service.icon}
+                    alt={`${service.title} icon`}
+                    className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 mb-4 sm:mb-5 object-contain"
+                  />
+                  <h3 className="text-base sm:text-lg lg:text-[2rem] font-bold mb-4 sm:mb-5 lg:mb-7 leading-tight">
+                    {service.title}
+                  </h3>
+                  <p className="text-[0.75rem] sm:text-sm lg:text-[1.125rem] text-gray-text font-medium mb-5 sm:mb-7 lg:mb-10 w-[90%] sm:w-[85%] lg:w-[80%] leading-relaxed">
+                    {service.description}
+                  </p>
+                  <Link
+                    to={service.link}
+                    className="bg-brand-main text-white w-full sm:w-[50%] lg:w-[45%] py-2.5 sm:py-3 rounded-md text-[0.75rem] sm:text-sm lg:text-base font-medium hover:bg-opacity-90 transition-all hover:scale-105 hover:shadow-lg"
+                  >
+                    More
+                  </Link>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-16 sm:py-20">
+              <p className="text-gray-text text-base sm:text-lg lg:text-xl font-medium">
+                No services found matching "{searchValue}"
+              </p>
+              <button
+                onClick={() => setSearchValue("")}
+                className="mt-4 text-brand-main hover:underline font-medium"
+              >
+                Clear search
+              </button>
+            </div>
+          )}
+        </div>
+      </section>
+    </>
   );
 };
 
