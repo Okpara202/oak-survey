@@ -79,7 +79,7 @@ function TopographicalComp() {
           <div key={index} className="border-b border-neutral">
             <button
               onClick={() => toggleFAQ(index)}
-              className="w-full flex justify-between items-center gap-4 px-5 py-7 text-left hover:bg-gray-50 transition-colors"
+              className="w-full flex justify-between items-center gap-4 px-5 py-7 text-left hover:bg-gray-50 transition-colors cursor-pointer"
               aria-expanded={openIndex === index}
             >
               <span className="leading-relaxed sm:leading-8 lg:leading-9 font-medium text-[0.75rem] sm:text-[1rem] lg:text-[1.125rem]">

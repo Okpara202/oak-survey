@@ -44,7 +44,7 @@ function Footer() {
               placeholder="Message"
             ></textarea>
 
-            <button className="rounded-lg bg-brand-main w-[151px] h-12 text-white font-medium absolute md:right-0 left-0 -bottom-20">
+            <button className="rounded-lg bg-brand-main w-[151px] h-12 text-white font-medium absolute md:right-0 left-0 -bottom-20 cursor-pointer">
               Send
             </button>
           </div>
@@ -69,7 +69,7 @@ function Footer() {
                     className="md:text-[1.125rem]/27.67px text-[0.75rem]/27.67px font-normal  text-white-gray"
                     to="trustedPartners"
                   >
-                    Trusted Partners
+                    Trusted Clients
                   </Link>
                 </li>
                 <li>

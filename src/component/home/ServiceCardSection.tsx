@@ -53,7 +53,7 @@ export default function ServiceCardsSection() {
             <p className="font-medium text-[1rem] xl:text-[1.125rem] leading-relaxed">
               {card.description}
             </p>
-            <button className="rounded border border-yellow-border text-yellow-border py-3 px-4 xl:py-[22px] xl:px-6 hover:text-light-gray hover:bg-brand-main hover:border-brand-main flex items-center justify-between h-12 transition-all duration-300 text-sm xl:text-base">
+            <button className="rounded border border-yellow-border text-yellow-border py-3 px-4 xl:py-[22px] xl:px-6 hover:text-light-gray hover:bg-brand-main hover:border-brand-main flex items-center justify-between h-12 transition-all duration-300 text-sm xl:text-base cursor-pointer">
               More About Us <FaPlay className="ml-2" />
             </button>
           </aside>
@@ -80,7 +80,7 @@ export default function ServiceCardsSection() {
                 <p className="font-medium text-[0.95rem] sm:text-[1rem] leading-relaxed">
                   {card.description}
                 </p>
-                <button className="rounded border border-yellow-border text-yellow-border py-3 px-4 sm:py-[22px] sm:px-6 hover:text-light-gray hover:bg-brand-main hover:border-brand-main flex items-center justify-between h-12 transition-all duration-300 text-sm sm:text-base">
+                <button className="rounded border border-yellow-border text-yellow-border py-3 px-4 sm:py-[22px] sm:px-6 hover:text-light-gray hover:bg-brand-main hover:border-brand-main flex items-center justify-between h-12 transition-all duration-300 text-sm sm:text-base cursor-pointer">
                   More About Us <FaPlay className="ml-2" />
                 </button>
               </aside>
@@ -107,14 +107,14 @@ export default function ServiceCardsSection() {
           <button
             onClick={handlePrev}
             aria-label="Previous card"
-            className="focus:outline-none focus:ring-2 focus:ring-brand-main rounded-full"
+            className="focus:outline-none focus:ring-2 focus:ring-brand-main rounded-full cursor-pointer"
           >
             <FaArrowCircleLeft className="w-7 h-7 sm:w-8 sm:h-8 text-brand-main hover:opacity-80 transition-opacity" />
           </button>
           <button
             onClick={handleNext}
             aria-label="Next card"
-            className="focus:outline-none focus:ring-2 focus:ring-brand-main rounded-full"
+            className="focus:outline-none focus:ring-2 focus:ring-brand-main rounded-full cursor-pointer"
           >
             <FaArrowCircleRight className="w-7 h-7 sm:w-8 sm:h-8 text-brand-main hover:opacity-80 transition-opacity" />
           </button>
